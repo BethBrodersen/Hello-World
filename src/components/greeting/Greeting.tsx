@@ -1,5 +1,7 @@
+import './Greeting.css';
+
 const Greeting = (props : GreetingProps) => {
-    return <p>Hello {props.name}. You are {props.age} years old.</p>
+    return <p className="greeting-paragraph" >Hello {props.name}. You are {props.age} years old.</p>
 };
 
 type GreetingProps = {
