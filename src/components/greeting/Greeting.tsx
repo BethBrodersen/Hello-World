@@ -1,12 +1,14 @@
+import { useState } from 'react';
 import './Greeting.css';
 
 const Greeting = (props : GreetingProps) => {
+    console.log("greeting is running");
 
-    let name =props.name;
+    const [name, setName] = useState<string>(props.name);
 
     const changeName = () => {
-        name="Jim";
-        console.log("button was clicked");
+        setName("Jim");
+        console.log("button was clicked", name);
     };
 
     return <div>
