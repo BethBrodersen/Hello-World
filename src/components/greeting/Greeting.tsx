@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './Greeting.css';
 
 const Greeting = (props : GreetingProps) => {
@@ -11,9 +11,17 @@ const Greeting = (props : GreetingProps) => {
         console.log("button was clicked", name);
     };
 
+    const handleButtonClick = (event : React.MouseEvent<HTMLButtonElement>) => {
+        console.log("Button ", event.currentTarget.id , " was clicked with text ", event.currentTarget.textContent)
+}
+
     return <div>
                 <p className="greeting-paragraph" >Hello {name}. You are {props.age} years old.</p>
                 <button onClick={changeName}  >Change my name</button>
+
+                <button id="b1" onClick={handleButtonClick}>button 1</button>
+                <button id="b2" onClick={handleButtonClick}>button 2</button>
+                <button id="b3" onClick={handleButtonClick}>button 3</button>
         </div>
 };
 
