@@ -1,10 +1,11 @@
+import { SongType } from "./SongList";
+
 const Song = (props : SongProps) => {
-    return <li>{props.title} by {props.artist}</li>
+    return <li>{props.song.title} by {props.song.artist}</li>
 }
 
 type SongProps = {
-    title : string,
-    artist : string
+    song : SongType
 }
 
 export default Song;
